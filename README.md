@@ -18,7 +18,7 @@
     docker-compose -f ngc.yaml up -d
    
    For gnb
-    docker-compose -f 1gnb.yaml up -d
+    cd 
     
  4. Input subscriber with webconsole
     http://localhost:5000
@@ -40,7 +40,7 @@
     
     - In ue container,
     
-    ping -I ping google.com -I uesimtun0 -n
+    ping google.com -I uesimtun0 -n
     
     - In upf container,
     
