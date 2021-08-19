@@ -90,17 +90,17 @@ logger:
     debugLevel: trace
     ReportCaller: false
   FSM:
-    debugLevel: trace
+    debugLevel: info
     ReportCaller: false
   NGAP:
     debugLevel: trace
     ReportCaller: false
   Aper:
-    debugLevel: trace
+    debugLevel: info
     ReportCaller: false
   PathUtil:
-    debugLevel: trace
+    debugLevel: info
     ReportCaller: false
   OpenApi:
-    debugLevel: trace
+    debugLevel: info
     ReportCaller: false

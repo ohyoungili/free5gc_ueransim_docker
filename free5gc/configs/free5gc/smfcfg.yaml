@@ -144,13 +144,13 @@ logger:
     debugLevel: trace
     ReportCaller: false
   Aper:
-    debugLevel: trace
+    debugLevel: info
     ReportCaller: false
   PathUtil:
-    debugLevel: trace
+    debugLevel: info
     ReportCaller: false
   OpenApi:
-    debugLevel: trace
+    debugLevel: info
     ReportCaller: false
   PFCP:
     debugLevel: trace
