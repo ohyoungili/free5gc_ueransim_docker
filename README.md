@@ -9,7 +9,10 @@
    For ueransim
     docker build -f Dockerfile --tag ueransimforfree5gc:3.2.2 .
  
- 2. Run containers
+ 3. Install gtp5g
+    with install_gtp5g.sh
+    
+ 5. Run containers
    
    For free5gc
     docker-compose -f ngc.yaml up -d
@@ -17,16 +20,16 @@
    For gnb
     docker-compose -f 1gnb.yaml up -d
     
- 3. Input subscriber with webconsole
+ 4. Input subscriber with webconsole
     http://localhost:5000
     admin/free5gc
  
- 4. Run containers
+ 5. Run containers
     
     For ue
      docker-compose -f 1ue.yaml up -d
      
- 5. Remove all
+ 6. Remove all
     docker-compose -f ngc.yaml down
     docker-compose -f 1gnb.yaml down
     docker-compose -f 1ue.yaml down
