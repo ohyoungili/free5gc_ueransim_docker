@@ -29,7 +29,7 @@ RUN cd /tmp && git clone https://github.com/aligungr/UERANSIM.git && \
 RUN cd /tmp/UERANSIM && echo "cmake --version" && make
 
 #FROM debian:stable-slim
-FROM debian:buster-slim
+FROM debian:latest
 
 RUN apt-get update && \
     apt-get install -y  \
