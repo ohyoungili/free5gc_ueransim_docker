@@ -29,7 +29,29 @@
     For ue
      docker-compose -f 1ue.yaml up -d
      
- 6. Remove all
+ 6. Test
+ 
+    - In upf container,
+    
+    sudo sysctl -w net.ipv4.ip_forward=1
+    sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+    sudo systemctl stop ufw     
+    sudo iptables -I FORWARD 1 -j ACCEPT
+    
+    - In ue container,
+    
+    ping -I ping google.com -I uesimtun0 -n
+    
+    - In upf container,
+    
+    tcpdump -i eth0 -n
+    
+    - In ue container,
+    
+    sh nr-binder 10.45.0.2 curl google.com
+    
+    
+ 7. Remove all
     docker-compose -f ngc.yaml down
     docker-compose -f 1gnb.yaml down
     docker-compose -f 1ue.yaml down
