@@ -3,12 +3,6 @@ FROM golang:1.14 as builder
 ARG version=3.0.5
 ENV VERSION=$version
 
-#LABEL org.opencontainers.image.authors="Carlos Giraldo <cgiraldo@gradiant.org>" \
-#      org.opencontainers.image.vendor="Gradiant" \
-#      org.opencontainers.image.licenses="Apache-2.0" \
-#      org.opencontainers.image.version="$version"
-
-
 RUN apt-get update && \
     apt -y install \
         git gcc cmake autoconf libtool pkg-config libmnl-dev libyaml-dev
@@ -35,15 +29,10 @@ FROM debian:buster-slim
 ARG version=3.0.5
 ENV VERSION=$version
 
-#LABEL org.opencontainers.image.authors="Carlos Giraldo <cgiraldo@gradiant.org>" \
-#      org.opencontainers.image.vendor="Gradiant" \
-#      org.opencontainers.image.licenses="Apache-2.0" \
-#      org.opencontainers.image.version="$version"
-
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y \
     libyaml-0-2 \
     libmnl0 \
-    iproute2 iputils-ping procps net-tools iptables && \
+    iproute2 iputils-ping procps net-tools iptables tcpdump && \
     rm -rf /var/lib/apt/lists/*
 
 COPY --from=builder /usr/local/bin/ /usr/local/bin/
